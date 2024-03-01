@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="view_todo_ticket_tree" model="ir.ui.view">
+            <field name="name">todo.ticket.tree</field>
+            <field name="model">todo.ticket</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="number"/>
+                    <field name="tag"/>
+                    <field name="state"/>
+                    <field name="assign_to"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_todo_ticket_form" model="ir.ui.view">
+            <field name="name">todo.ticket.form</field>
+            <field name="model">todo.ticket</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="number"/>
+                        <field name="tag"/>
+                        <field name="state"/>
+                        <field name="file"/>
+                        <field name="assign_to"/>
+                        <field name="description"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_todo_ticket_tree" model="ir.actions.act_window">
+            <field name="name">All Tickets</field>
+            <field name="res_model">todo.ticket</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="todo_app.view_todo_ticket_tree"/>
+        </record>
+
+        <menuitem id="menu_todo_root" name="Todo" sequence="10"/>
+        <menuitem id="menu_todo_tickets" name="Tickets" parent="menu_todo_root" sequence="1"/>
+        <menuitem id="menu_todo_tickets_all" name="All Tickets" parent="menu_todo_tickets" action="action_todo_ticket_tree"/>
+        <menuitem id="menu_todo_tickets_my" name="My Tickets" parent="menu_todo_tickets" action="action_todo_ticket_tree_my"/>
+
+    </data>
+</odoo>
