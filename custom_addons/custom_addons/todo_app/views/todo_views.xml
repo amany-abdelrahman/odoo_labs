@@ -9,7 +9,7 @@
                     <field name="number"/>
                     <field name="tag"/>
                     <field name="state"/>
-                    <field name="assign_to"/>
+                    <field name="description"/>
                 </tree>
             </field>
         </record>
