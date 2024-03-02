@@ -19,15 +19,17 @@
             <field name="model">todo.ticket</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="name"/>
-                        <field name="number"/>
-                        <field name="tag"/>
-                        <field name="state"/>
-                        <field name="file"/>
-                        <field name="assign_to"/>
-                        <field name="description"/>
-                    </group>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="number"/>
+                            <field name="tag"/>
+                            <field name="state"/>
+                            <field name="file"/>
+                            <field name="assign_to"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -43,6 +45,6 @@
         <menuitem id="menu_todo_tickets" name="Tickets" parent="menu_todo_root" sequence="1"/>
         <menuitem id="menu_todo_tickets_all" name="All Tickets" parent="menu_todo_tickets" action="action_todo_ticket_tree"/>
         <menuitem id="menu_todo_tickets_my" name="My Tickets" parent="menu_todo_tickets" action="action_todo_ticket_tree_my"/>
-
     </data>
 </odoo>
+
