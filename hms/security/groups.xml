@@ -1,0 +1,62 @@
+<odoo>
+
+    <record id="access_patient" model="ir.model.access">
+        <field name="name">Access Patient</field>
+        <field name="model_id" ref="model_patient"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_department" model="ir.model.access">
+        <field name="name">Access Department</field>
+        <field name="model_id" ref="model_department"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_doctor" model="ir.model.access">
+        <field name="name">Access Doctor</field>
+        <field name="model_id" ref="model_doctor"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_patient_manager" model="ir.model.access">
+        <field name="name">Access Patient Manager</field>
+        <field name="model_id" ref="model_patient"/>
+        <field name="group_id" ref="custom_addons.group_patient_manager"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_department_manager" model="ir.model.access">
+        <field name="name">Access Department Manager</field>
+        <field name="model_id" ref="model_department"/>
+        <field name="group_id" ref="custom_addons.group_department_manager"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_doctor_manager" model="ir.model.access">
+        <field name="name">Access Doctor Manager</field>
+        <field name="model_id" ref="model_doctor"/>
+        <field name="group_id" ref="custom_addons.group_doctor_manager"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+</odoo>
